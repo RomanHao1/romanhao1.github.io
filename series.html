@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品系列 - 我的作品集</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">我的作品集</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html#about">关于我</a></li>
+                    <li><a href="index.html#portfolio">作品集</a></li>
+                    <li><a href="index.html#contact">联系我</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 系列详情 -->
+    <section class="series-detail">
+        <div class="container">
+            <div class="back-link">
+                <a href="index.html#portfolio" class="btn-back">← 返回作品集</a>
+            </div>
+            
+            <div id="series-content">
+                <!-- 系列标题和描述 -->
+                <div class="series-header">
+                    <h2 id="series-title">作品系列标题</h2>
+                    <h3 id="series-subtitle">副标题</h3>
+                    <p id="series-description">这是作品系列的详细描述，介绍这个系列的创作理念、灵感来源等信息。</p>
+                </div>
+
+                <!-- 系列图片网格 -->
+                <div class="series-grid">
+                    <!-- 图片将通过JavaScript动态加载 -->
+                    <div class="series-image-item">
+                        <img src="https://via.placeholder.com/800x600" alt="系列作品">
+                        <div class="image-caption">作品描述</div>
+                    </div>
+                    <div class="series-image-item">
+                        <img src="https://via.placeholder.com/800x600" alt="系列作品">
+                        <div class="image-caption">作品描述</div>
+                    </div>
+                    <div class="series-image-item">
+                        <img src="https://via.placeholder.com/800x600" alt="系列作品">
+                        <div class="image-caption">作品描述</div>
+                    </div>
+                    <div class="series-image-item">
+                        <img src="https://via.placeholder.com/800x600" alt="系列作品">
+                        <div class="image-caption">作品描述</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 我的作品集. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 获取URL参数
+        function getUrlParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const pairs = queryString.split('&');
+            for (let i = 0; i < pairs.length; i++) {
+                const pair = pairs[i].split('=');
+                params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+            }
+            return params;
+        }
+
+        // 项目数据
+        const seriesData = {
+            'nature': {
+                title: '数字人系列',
+                subtitle: '于2023年智能骑行项目中制作',
+                description: '该项目是一个基于blender的数字人项目，通过blender建模，高低模拓扑，法线烘焙，骨骼绑定，人物动画，cycles渲染等技术，制作出了一个完整的数字人模型。\n' +
+                             '目标是为智能骑行项目提供一个数字人模型，用于模拟骑行者的行为，从而为用户提供一个更加真实的骑行体验。',
+                images: [
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/woman_01_2.png', alt: '数字人1', caption: '数字人1' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/man_04_1.png', alt: '数字人2', caption: '数字人2' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/man_02_1.png', alt: '数字人3', caption: '数字人3' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/man_01_1.png', alt: '数字人4', caption: '数字人4' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/man_05_1.png', alt: '数字人5', caption: '数字人5' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/woman_05_1.png', alt: '数字人6', caption: '数字人6' }
+                ],
+                videos: [
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E9%AA%91%E8%A1%8C%E6%A8%A1%E6%8B%9F.mp4', alt: '骑行模拟', caption: '骑行模拟' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E7%A9%BF%E8%B6%8A%E5%B1%8F%E5%B9%95.mp4', alt: '穿越屏幕', caption: '穿越屏幕' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E9%AA%91%E8%A1%8Cpad%E8%BF%91%E6%99%AF.mp4', alt: '骑行pad近景', caption: '骑行pad近景' }
+                ]
+            },       
+            'urban': {
+                title: '室内渲染系列',
+                subtitle: '于2025年在IKEA，GPC项目中制作',
+                description: '这个系列聚焦于室内环境的渲染，通过不同的角度和光照条件，展示室内空间的搭配设计，探索室内空间的可能性。该项目包含线上3d设计工具，结合宜家商品模型，展示不同的室内设计方案，可更换多模态，多材质，同时支持所选商品加入购物车结算。除优化渲染、模型标准制定、模型供应商的培训外，我还负责材质库管理、截面数据计算、模型尺寸计算、boundingbox计算、自动建模、模型智能压缩等功能的python代码开发。',
+                images: [
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E6%97%A5-%E5%BC%80%E7%81%AF-%E5%BC%80%E6%9F%9C-%E5%8E%A8%E6%88%BF.jpg', alt: '厨房全景01', caption: '厨房全景01' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E9%95%9C%E5%A4%B41-%E6%97%A5-%E5%85%A8%E5%BC%80.jpg', alt: '客厅全景01', caption: '客厅全景01' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E6%97%A5-%E5%85%A8%E5%BC%80.jpg', alt: '卧室全景01', caption: '卧室全景01' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E7%99%BD-%E5%BC%8001.jpg', alt: '卧厅全景01', caption: '卧厅全景01' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/02.jpg', alt: '厨房全景02', caption: '厨房全景02' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E8%8A%82%E7%82%B9%E9%99%8D%E5%99%AA.jpg', alt: '厨房全景03', caption: '厨房全景03' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/001.jpg', alt: '厨房一角', caption: '厨房一角' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/01.jpg', alt: '衣帽间', caption: '衣帽间' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/20260108-160109.jpg', alt: '卧室一角01', caption: '客厅01' }
+                ],
+                videos: [
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/ES%20kitchen%20imagination.mp4', alt: '全景漫游', caption: '全景漫游' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/GPC%20kitchen%20video%20CN.mp4', alt: '厨房装配展示', caption: '厨房装配展示' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E6%97%A5%E6%9C%AC%E6%B6%A9%E8%B0%B7%E5%AE%9C%E5%AE%B6%E7%BA%BF%E4%B8%8B1.mp4', alt: '日本涩谷宜家线下', caption: '日本涩谷宜家线下' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/AR%E9%A1%B9%E7%9B%AE%E7%A4%BA%E6%84%8F.mp4', alt: 'AR项目示意', caption: 'AR项目示意' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E6%A0%B7%E6%9D%BF%E9%97%B4%E6%90%AD%E5%BB%BA%E5%8A%A8%E7%94%BB.mp4', alt: '样板间搭建动画', caption: '样板间搭建动画' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E6%B2%99%E5%8F%91%E5%AE%89%E8%A3%85.mp4', alt: '沙发安装', caption: '沙发安装' }                    
+                ]
+            },
+            'portrait': {
+                title: '单车系列',
+                subtitle: '于2023年动感单车系列项目中制作',
+                description: '单车系列中含boombike、litbike、roadbike、e-bike等不同类型的动感单车。我负责这些单车的建模、渲染和动画。还有单车配套的课程项目，游戏项目等，我负责场景设计并与开发团队合作，确保项目的成功实现。',
+                images: [
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/E-bike%E7%94%B7%E6%AC%BE.jpg', alt: 'E-bike男款', caption: 'E-bike男款' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/Roadbike.jpg', alt: 'Roadbike', caption: 'Roadbike' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/Litbike.jpg', alt: 'Litbike', caption: 'Litbike' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/SKU%E8%BD%AE%E6%92%AD%E5%9B%BE-Boombike-yellow-4.jpg', alt: 'Boombike', caption: 'Boombike' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/SKU%E8%BD%AE%E6%92%AD%E5%9B%BE-Boombike-gray-4.jpg', alt: 'Boombike', caption: 'Boombike' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/SKU%E8%BD%AE%E6%92%AD%E5%9B%BE-Boombike-white-1.jpg', alt: 'Boombike', caption: 'Boombike' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/Roadbike%E7%89%B9%E5%86%99.jpg', alt: 'Roadbike特写', caption: 'Roadbike特写' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/E-bike%E7%94%B5%E6%9C%BA%E7%89%B9%E5%86%99.jpg', alt: 'E-bike电机特写', caption: 'E-bike电机特写' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/Litbike%E9%A6%96%E9%A1%B5%E5%9B%BE.jpg', alt: 'Litbike首页图', caption: 'Litbike首页图' },
+                    
+                ],
+                videos: [
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/Boombike%E5%AE%A3%E4%BC%A0%E5%8A%A8%E7%94%BB.mp4', alt: 'Boombike产品动画', caption: 'Boombike产品动画' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/E-bike%E5%AE%A3%E4%BC%A0%E8%A7%86%E9%A2%91.mp4', alt: 'E-bike宣传视频', caption: 'E-bike宣传视频' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/Christmas%20box.mp4', alt: 'Christmas box', caption: 'Christmas box' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E9%AD%94%E6%B3%95%E6%A3%AE%E6%9E%97%E8%A7%86%E9%A2%91%E5%88%9D%E6%AD%A5%E5%85%89%E6%95%88.mp4', alt: '魔法森林视频初步光效', caption: '魔法森林场景' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E8%BF%B7%E5%B9%BB%E9%AA%91%E8%A1%8C%E5%9C%BA%E6%99%AF.mp4', alt: '迷幻骑行场景', caption: '迷幻光带场景' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E6%B8%B8%E6%88%8Fcombo%E7%A4%BA%E6%84%8F.mp4', alt: '游戏combo示意', caption: '游戏combo示意' }
+                ]
+            },
+            'abstract': {
+                title: 'NFT系列',
+                description: 'NFT系列中包含了一些基于区块链技术的数字资产，如虚拟货币、游戏道具等。我负责这些资产的设计和推广，包括3D建模、动画、特效以及各类合成视频的制作。',
+                images: [
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E5%9C%A3%E8%AF%9E%E5%B0%8F%E9%9B%AA%E6%A9%87.jpg', alt: '圣诞小雪橇', caption: '圣诞小雪橇' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/NFT%E9%83%A8%E5%88%86%E5%90%88%E5%BD%B1.jpg', alt: 'NFT部分合影', caption: 'NFT部分合影' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E7%BD%91%E7%AB%99%E6%88%AA%E5%9B%BE.jpg', alt: '网站截图', caption: '网站截图' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E5%96%82%E5%85%BB%E5%8D%87%E7%BA%A7.jpg', alt: '喂养升级', caption: '喂养升级' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8BOJEE.jpg', alt: '赛博朋克OJEE', caption: '赛博朋克OJEE' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E6%98%9F%E9%99%85%E7%A9%BF%E8%B6%8AOJEE.jpg', alt: '星际穿越OJEE', caption: '星际穿越OJEE' }
+                ],
+                videos: [
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E6%98%9F%E9%99%85%E7%A9%BF%E8%B6%8AOJEE.mp4', alt: '星际穿越OJEE', caption: '星际穿越OJEE' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E8%99%B9%E6%B5%81%E4%BA%A4%E7%BB%87OJEE.mp4', alt: '虹流交织OJEE', caption: '虹流交织OJEE' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8BOJEE.mp4', alt: '赛博朋克OJEE', caption: '赛博朋克OJEE' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E6%96%B0%E6%89%8B%E5%BC%95%E5%AF%BC%E8%8B%B1%E6%96%87%E7%89%88.mp4', alt: '新手引导英文版', caption: '新手引导英文版' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E5%AE%A0%E7%89%A9%E5%8D%87%E7%BA%A7%E5%9B%9E%E9%A1%BE.mp4', alt: '宠物升级回顾', caption: '宠物升级回顾' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E5%9C%A3%E8%AF%9E%E7%A4%BC%E7%9B%92%E5%B1%95%E7%A4%BA.mp4', alt: '圣诞礼盒展示', caption: '圣诞礼盒展示' }
+                ]
+            },
+            'space-travel': {
+                title: '过往商业作品',
+                subtitle: '于往期项目中制作',
+                description: '这里包含了我独立制作或参与制作的各类商业项目视频，展示我在不同领域的创意和努力。',
+                images: [
+                ],
+                videos: [
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E4%B8%87%E7%A7%91%E5%A4%A7%E6%BA%AA%E8%B0%B7.mp4', alt: '万科大溪谷视频', caption: '万科大溪谷' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/muma.mp4', alt: 'muma视频', caption: '彩蛋木马' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/renmianchun.mp4', alt: 'renmianchun', caption: '彩蛋人面蝽' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/bird.mp4', alt: 'bird视频', caption: '换个角度看一看' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E6%96%91%E9%A9%AC%E7%BA%BF%E6%BC%94%E5%A5%8F.mp4', alt: '斑马线演奏视频', caption: '斑马线演奏' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/Hitachi_PG%20Supporting%20Lives_NA%E4%B8%AD%E5%9B%BD%E8%AA%9E.mp4', alt: '日立电梯', caption: '日立电梯' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E7%A6%8F%E7%89%B9%E8%92%99%E8%BF%AA%E6%AC%A7.mp4', alt: '福特蒙迪欧', caption: '福特蒙迪欧' }
+                ]
+            },
+            'christmas-box': {
+                title: '个人探索练习',
+                subtitle: '于往期blender、c4d等个人练习作品',
+                description: '这是一个关于个人探索练习的部分，记录了我在blender、c4d等软件中的设计与创作。',
+                images: [ { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E6%91%87%E6%BB%9A%E4%B8%8D%E6%AD%BB.jpg', alt: '摇滚不死', caption: '摇滚不死' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E7%A9%BA%E9%97%B4%E7%AB%99.jpg', alt: '空间站', caption: '空间站' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E6%8E%A2%E7%B4%A2%E5%AE%87%E5%AE%99.jpg', alt: '探索宇宙', caption: '探索宇宙' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E5%86%B2%E8%BF%9B%E6%9C%AA%E6%9D%A5.jpg', alt: '冲进未来', caption: '冲进未来' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E8%87%AA%E7%94%B1.jpg', alt: '自由', caption: '自由' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E6%9E%A2%E7%BA%BD.jpg', alt: '枢纽', caption: '枢纽' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E8%8A%AF%E7%89%87.jpg', alt: '芯片', caption: '芯片' }
+                ],
+                videos: [
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E5%86%B2%E8%BF%9B%E6%9C%AA%E6%9D%A5.mp4', alt: '冲进未来', caption: '冲进未来' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/3D-%E6%A0%91%E6%9E%97.mp4', alt: '3D-树林', caption: '3D-树林' },
+                    { src: 'https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/videos/%E6%A4%8D%E7%89%A9%E7%94%9F%E9%95%BF%E5%8A%A8%E7%94%BB.mp4', alt: '植物生长动画', caption: '植物生长动画' },
+                ]
+            }
+        };
+
+        // 加载系列数据
+        function loadSeriesData() {
+            const params = getUrlParams();
+            const seriesId = params.id || 'nature';
+            const series = seriesData[seriesId];
+
+            if (series) {
+                // 更新标题、副标题和描述
+                document.getElementById('series-title').textContent = series.title;
+                
+                // 检查是否有副标题
+                const subtitleElement = document.getElementById('series-subtitle');
+                if (series.subtitle) {
+                    subtitleElement.textContent = series.subtitle;
+                    subtitleElement.style.display = 'block';
+                } else {
+                    subtitleElement.style.display = 'none';
+                }
+                
+                document.getElementById('series-description').textContent = series.description;
+
+                // 清空现有内容
+                const grid = document.querySelector('.series-grid');
+                grid.innerHTML = '';
+
+                // 添加新图片
+                series.images.forEach((image, index) => {
+                    const item = document.createElement('div');
+                    // 为个人探索练习的第一张图片添加特殊类
+                    if (seriesId === 'christmas-box' && index === 0) {
+                        item.className = 'series-image-item series-image-item-full-width';
+                    } else {
+                        item.className = 'series-image-item';
+                    }
+                    item.innerHTML = `
+                        <img src="${image.src}" alt="${image.alt}">
+                        <div class="image-caption">${image.caption}</div>
+                    `;
+                    grid.appendChild(item);
+                });
+
+                // 添加新视频
+                series.videos.forEach((video, index) => {
+                    const item = document.createElement('div');
+                    // 为过往商业作品的第一个视频添加特殊类
+                    if (seriesId === 'space-travel' && index === 0) {
+                        item.className = 'series-video-item series-video-item-full-width';
+                    } else {
+                        item.className = 'series-video-item';
+                    }
+                    item.innerHTML = `
+                        <video controls>
+                            <source src="${video.src}" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                        <div class="video-caption">${video.caption}</div>
+                    `;
+                    grid.appendChild(item);
+                });
+            } else {
+                // 如果找不到系列，显示错误信息
+                const content = document.getElementById('series-content');
+                content.innerHTML = `
+                    <div class="error-message">
+                        <h2>找不到该作品系列</h2>
+                        <p><a href="index.html#portfolio" class="btn">返回作品集</a></p>
+                    </div>
+                `;
+            }
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', loadSeriesData);
+    </script>
+</body>
+</html>
