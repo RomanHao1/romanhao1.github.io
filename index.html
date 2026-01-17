@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的作品集</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">我的作品集</a>
+                <ul class="nav-menu">
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#portfolio">作品集</a></li>
+                    <li><a href="#contact">联系我</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 英雄区 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>创意作品集</h1>
+                <p>展示我的设计与创作</p>
+                <a href="#portfolio" class="btn">查看作品</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>关于我</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>你好！我叫郝志伟（Roman Hao），于2018年毕业于东华大学视觉传达设计专业，是一名3D美术工程师，专注于视觉设计、多媒体创作及后端开发相关技术。这个作品集展示了我的精选作品，包括图像设计、视频创作等。</p>
+                    <p>我热爱创造有意义的视觉体验，通过设计传达故事和情感，同时致力于将技术与创意结合，为用户提供独特的交互体验。</p>
+                </div>
+                <div class="about-image">
+                    <!-- 将您的个人照片放在 images 文件夹中，然后修改下面的路径 -->
+                    <img src="images/152212.jpg" alt="关于我">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>我的作品</h2>
+            <!-- 项目展示 -->
+            <div class="portfolio-grid">
+                <!-- 图像作品系列 -->
+                <div class="portfolio-item images">
+                    <a href="series.html?id=nature" class="series-link">
+                        <div class="portfolio-overlay">
+                            <h3>数字人系列</h3>
+                            <p>数字人</p>
+                            <span class="view-more">查看系列 →</span>
+                        </div>
+                        <!-- 将您的系列主图放在 images 文件夹中，然后修改下面的路径 -->
+                        <img src="images/woman_01_1.png" alt="数字人系列">
+                    </a>
+                </div>
+                <div class="portfolio-item images">
+                    <a href="series.html?id=urban" class="series-link">
+                        <div class="portfolio-overlay">
+                            <h3>室内渲染系列</h3>
+                            <p>室内环境的渲染与设计</p>
+                            <span class="view-more">查看系列 →</span>
+                        </div>
+                        <img src="images/白-灯-开1.jpg" alt="室内渲染系列">
+                    </a>
+                </div>
+                <div class="portfolio-item images">
+                    <a href="series.html?id=portrait" class="series-link">
+                        <div class="portfolio-overlay">
+                            <h3>动感单车系列</h3>
+                            <p>动感单车的设计与创作</p>
+                            <span class="view-more">查看系列 →</span>
+                        </div>
+                        <img src="images/b1.jpg" alt="动感单车系列">
+                    </a>
+                </div>
+                <div class="portfolio-item images">
+                    <a href="series.html?id=abstract" class="series-link">
+                        <div class="portfolio-overlay">
+                            <h3>NFT系列</h3>
+                            <p>NFT项目的设计与创作</p>
+                            <span class="view-more">查看系列 →</span>
+                        </div>
+                        <img src="images/圣诞雪橇.jpg" alt="NFT系列">
+                    </a>
+                </div>
+                
+                <!-- 视频项目 -->
+                <div class="portfolio-item projects">
+                    <a href="series.html?id=space-travel" class="series-link">
+                        <div class="portfolio-overlay">
+                            <h3>往期商业作品</h3>
+                            <p>展示我在商业项目中的设计与创作</p>
+                            <span class="view-more">查看项目 →</span>
+                        </div>
+                        <img src="images/城中村项目.jpg" alt="城中村项目">
+                    </a>
+                </div>
+                <div class="portfolio-item projects">
+                    <a href="series.html?id=christmas-box" class="series-link">
+                        <div class="portfolio-overlay">
+                            <h3>个人探索练习</h3>
+                            <p>个人探索练习项目</p>
+                            <span class="view-more">查看项目 →</span>
+                        </div>
+                        <img src="images/遗落的记忆.jpg" alt="个人探索练习">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>联系我</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>如果您对我的作品感兴趣，或者有任何合作机会，欢迎随时联系我！</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span>邮箱：</span>
+                            <a href="1275855649@qq.com">1275855649@qq.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>电话：</span>
+                            <a href="tel:+15221253867">+15221253867</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 我的作品集. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
