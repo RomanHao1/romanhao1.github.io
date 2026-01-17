@@ -79,7 +79,7 @@ body {
 
 /* 英雄区 */
 .hero {
-    background-image: url('images/探索宇宙.jpg');
+    background-image: url('https://aid-henry-search-prod.oss-cn-shanghai.aliyuncs.com/Roman_Material%20library/CODE/images/%E6%8E%A2%E7%B4%A2%E5%AE%87%E5%AE%99.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
